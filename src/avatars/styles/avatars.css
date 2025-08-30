@@ -1,1 +1,45 @@
 /* 여기에 스타일을 구현해 주세요 */
+
+/* 전체 크기  */
+main {
+  width: 420px;
+  height: 225px;
+  /* border: 2px solid red; */
+  position: relative;
+  /* position: relative;  겹치게 */
+}
+/* 아바타와 이미지  */
+.avatars {
+  position: relative;
+  /* position: relative;  겹치게 */
+  float: left;
+  margin: 10px;
+  align-content: center;
+}
+/* 아바타 */
+.avatars img {
+  width: 64px;
+  height: 64px;
+  margin: 10px;
+  border-radius: 16em;
+  background-color: #dbdbdb;
+  position: inline-block;
+  float: left;
+}
+/* 이미지 */
+.avatars .circle {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  border-radius: 50%;
+  float: left;
+  background-color: #dbdbdb; /* 기본 회색 (오프라인) */
+  border: 2px solid rgb(241, 241, 241); /* 테두리 */
+}
+/* 홀수 번째 아바타는 초록색 (온라인) */
+.avatars:nth-child(odd) .circle {
+  background-color: #4cfe88; /* 온라인 상태는 초록색 */
+  border: 2px solid #f2fcf5;
+}
