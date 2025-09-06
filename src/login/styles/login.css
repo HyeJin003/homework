@@ -1,1 +1,157 @@
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+
+:root {
+  --font-size-base: 1rem; /* 16px */
+  --color-text: #121212;
+  --color-focus: #24388d;
+  --input-font-size: 0.875rem; /* 14px */
+  --input-height: 2.8125rem; /* 45px */
+  --input-border-color: #dadada;
+  --input-bg-color: #fff;
+  --input-focus-border-color: #03cf5d;
+  --input-focus-bg-color: #e9f0fd;
+  --button-font-size: 1rem; /* 16px */
+  --button-height: 2.8125rem; /* 45px */
+  --button-bg-color: #03cf5d;
+  --button-text-color: #fff;
+}
+
+header {
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  margin: 100px;
+  align-items: center;
+}
+
+/* SVG 로고 스타일 */
+header svg {
+  width: 230px;
+}
+/* 로그인 영역 (예: div.login) */
+header .login {
+  position: relative;
+  margin: 10px;
+  justify-content: space-between;
+}
+/* 로그인 입력창 */
+header .login input {
+  width: 452px;
+  height: 42px;
+  display: block;
+  height: var(--input-height);
+  font-size: var(--input-font-size);
+  border: 1px solid var(--input-border-color);
+  background-color: var(--input-bg-color);
+}
+
+/* 입력창에 대한 라벨 */
+header .login label {
+  display: block;
+  position: relative;
+}
+header .login span {
+  display: block;
+  position: relative;
+  top: -40px;
+  left: 10px;
+} /* 기본 에러 메시지 숨기기 */
+.error-id,
+.error-pwd {
+  display: none;
+  color: red;
+}
+button {
+  width: 460px;
+  height: var(--button-height);
+  font-size: var(--button-font-size);
+  color: var(--button-text-color);
+  background-color: var(--button-bg-color);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-top: 1.25rem;
+}
+/* 입력 전일 때만 span 보이기 */
+input:placeholder-shown + span {
+  display: block;
+}
+
+/* 입력 시작하면 span 숨기기 */
+input:not(:placeholder-shown) + span {
+  display: none;
+}
+
+/* 입력 중이고, invalid 상태일 때 에러 메시지 보여주기 */
+input:invalid + span + p {
+  display: block;
+}
+.link-overlay {
+  text-decoration: none;
+}
+.check {
+  display: flex;
+  align-items: center; /* 수직 가운데 정렬 */
+}
+
+.check svg {
+  width: 24px;
+  height: 24px;
+}
+
+.security-wrapper label {
+  margin-left: auto;
+  display: inline-flex;
+  text-align: right;
+  align-items: center;
+  gap: 257px;
+}
+
+.real-link {
+  text-decoration: none;
+  color: var(--color-text);
+}
+.real-link:focus {
+  outline: var(--input-focus-border-color);
+  outline-offset: 4px;
+  text-decoration: none;
+}
+
+.ip-check {
+  display: none;
+}
+
+.ip-label::before {
+  content: 'OFF';
+  margin-left: 8px;
+  color: var(--color-text, #333);
+  cursor: pointer;
+}
+
+.ip-check:checked + .ip-label::before {
+  content: 'ON';
+  color: var(--button-bg-color);
+}
+
+.security {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+@media (max-width: 767.98px) {
+  /* 모바일 - IP 보안  숨김 */
+  .security {
+    display: none;
+  }
+}
+
+/* 데스크탑 스타일 */
+@media (min-width: 768px) {
+  .login-form {
+    width: 500px;
+    padding: 0 1.25rem; /* 좌우 20px */
+  }
+}
