@@ -77,10 +77,14 @@ input:placeholder-shown + span {
 input:not(:placeholder-shown) + span {
   display: none;
 }
-
+input:valid ~ .error-pwd,
+input:valid ~ .error-id {
+  display: none;
+}
 /* invalid 상태일 때 에러 메시지 보여주기 */
 input:invalid + span + p {
   display: block;
+  color: red;
 }
 .link-overlay {
   text-decoration: none;
@@ -120,7 +124,7 @@ input:invalid + span + p {
 .ip-label::before {
   content: 'OFF';
   margin-left: 8px;
-  color: var(--color-text, #333);
+  color: var(--color-text);
   cursor: pointer;
 }
 
