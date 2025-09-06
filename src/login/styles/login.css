@@ -28,7 +28,7 @@ header {
 header svg {
   width: 230px;
 }
-/* 로그인 영역 (예: div.login) */
+/* 로그인 영역  */
 header .login {
   position: relative;
   margin: 10px;
@@ -45,7 +45,7 @@ header .login input {
   background-color: var(--input-bg-color);
 }
 
-/* 입력창에 대한 라벨 */
+/* 입력할때 label */
 header .login label {
   display: block;
   position: relative;
@@ -55,12 +55,8 @@ header .login span {
   position: relative;
   top: -40px;
   left: 10px;
-} /* 기본 에러 메시지 숨기기 */
-.error-id,
-.error-pwd {
-  display: none;
-  color: red;
 }
+
 button {
   width: 460px;
   height: var(--button-height);
@@ -82,7 +78,7 @@ input:not(:placeholder-shown) + span {
   display: none;
 }
 
-/* 입력 중이고, invalid 상태일 때 에러 메시지 보여주기 */
+/* invalid 상태일 때 에러 메시지 보여주기 */
 input:invalid + span + p {
   display: block;
 }
@@ -91,7 +87,7 @@ input:invalid + span + p {
 }
 .check {
   display: flex;
-  align-items: center; /* 수직 가운데 정렬 */
+  align-items: center;
 }
 
 .check svg {
