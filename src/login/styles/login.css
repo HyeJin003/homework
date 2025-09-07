@@ -14,14 +14,14 @@
   --button-height: 2.8125rem; /* 45px */
   --button-bg-color: #03cf5d;
   --button-text-color: #fff;
+  --focus-background: #a0c4ff;
 }
 
 header {
-  /* background-color: aqua; */
   display: flex;
   flex-direction: column;
-  margin: 100px;
   align-items: center;
+  gap: 1.5rem;
 }
 
 /* SVG 로고 스타일 */
@@ -33,7 +33,15 @@ header .login {
   position: relative;
   margin: 10px;
   justify-content: space-between;
+  overflow: visible;
 }
+header .login p {
+  font-size: 0.75rem;
+  margin: 4px 0 0 4px;
+  color: red;
+  display: none;
+}
+
 /* 로그인 입력창 */
 header .login input {
   width: 452px;
@@ -55,6 +63,20 @@ header .login span {
   position: relative;
   top: -40px;
   left: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: 'SUIT Variable', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body > a {
+  position: absolute;
+  top: 150px;
+  font-size: 0.875rem;
 }
 
 button {
@@ -81,17 +103,36 @@ input:valid ~ .error-pwd,
 input:valid ~ .error-id {
   display: none;
 }
+
+input[type='text']:focus,
+input[type='password']:focus {
+  box-shadow: 0 0 0 2px var(--color-focus); /* 파란 포커스 효과 */
+}
+
 /* invalid 상태일 때 에러 메시지 보여주기 */
 input:invalid + span + p {
   display: block;
   color: red;
 }
+input:focus {
+  border-color: var(--focus-background);
+  box-shadow: 0 0 5px var(--focus-background);
+  transition: background-color 0.3s ease;
+}
+
+input:not(:placeholder-shown):focus {
+  background-color: #eaf1fb; /* 값이 있으면 배경색 유지 */
+}
+
 .link-overlay {
   text-decoration: none;
 }
 .check {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  width: 460px;
+  margin-top: 1rem;
+  font-size: 0.875rem;
 }
 
 .check svg {
@@ -140,18 +181,36 @@ input:invalid + span + p {
   font-size: 1rem;
   color: var(--color-text);
 }
+.check-box {
+  display: flex;
+  align-items: center;
+}
+input[type='checkbox'] {
+  display: none; /* 기본 체크박스 숨김 */
+}
+
+.check-focus svg {
+  display: none;
+}
+
+input[type='checkbox']:not(:checked) + .check-focus svg.unchecked {
+  display: block; /* 체크 안 된 상태 아이콘 표시 */
+}
+
+input[type='checkbox']:checked + .check-focus svg.checked {
+  display: block; /* 체크 된 상태 아이콘 표시 */
+}
 
 @media (max-width: 767.98px) {
-  /* 모바일 - IP 보안  숨김 */
   .security {
     display: none;
   }
 }
 
-/* 데스크탑 스타일 */
+/* 데스크탑 일경우 */
 @media (min-width: 768px) {
   .login-form {
     width: 500px;
-    padding: 0 1.25rem; /* 좌우 20px */
+    padding: 0 1.25rem;
   }
 }
