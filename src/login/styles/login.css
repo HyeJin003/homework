@@ -19,6 +19,7 @@
 
 header {
   display: flex;
+
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
@@ -212,5 +213,38 @@ input[type='checkbox']:checked + .check-focus svg.checked {
   .login-form {
     width: 500px;
     padding: 0 1.25rem;
+  }
+}
+/* 모바일 화면 전용 */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem; /* 전체 여백 */
+    height: auto; /* 세로 높이 자동 조절 */
+  }
+  header {
+    width: 100%;
+    max-width: 320px; /* 실제 모바일 화면 넓이 */
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+  header svg {
+    width: 180px; /* 로고 크기 조정 */
+    margin: 0 auto;
+    display: block;
+  }
+  header .login input,
+  button {
+    width: 100%; /* 화면 꽉 채우기 */
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .check {
+    width: 100%;
+    max-width: 100%;
+  }
+  .security-wrapper label {
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 }
