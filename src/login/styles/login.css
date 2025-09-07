@@ -58,6 +58,11 @@ header .login input {
 header .login label {
   display: block;
   position: relative;
+  margin-bottom: 1rem;
+}
+header .login p {
+  margin-top: 4px;
+  margin-bottom: 0.5rem;
 }
 header .login span {
   display: block;
@@ -218,33 +223,27 @@ input[type='checkbox']:checked + .check-focus svg.checked {
 /* 모바일 화면 전용 */
 @media (max-width: 480px) {
   body {
-    padding: 1rem; /* 전체 여백 */
-    height: auto; /* 세로 높이 자동 조절 */
+    padding: 2rem 1rem;
+    height: auto;
   }
-  header {
-    width: 100%;
-    max-width: 320px; /* 실제 모바일 화면 넓이 */
-    margin: 0 auto;
-    padding: 0 1rem;
-    box-sizing: border-box;
-  }
+
   header svg {
-    width: 180px; /* 로고 크기 조정 */
-    margin: 0 auto;
-    display: block;
+    width: 160px;
   }
-  header .login input,
-  button {
-    width: 100%; /* 화면 꽉 채우기 */
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-  .check {
-    width: 100%;
-    max-width: 100%;
-  }
+
   .security-wrapper label {
     gap: 1rem;
     flex-wrap: wrap;
+  }
+
+  .check {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .check svg {
+    width: 20px;
+    height: 20px;
   }
 }
