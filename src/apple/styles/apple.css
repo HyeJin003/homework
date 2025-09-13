@@ -74,6 +74,7 @@ body {
 
     .card-pro {
       background-image: url('/src/apple/products/ipad_pro_2x.jpeg');
+      background: red;
     }
     .card-ipad {
       background-image: url('/src/apple/products/ipad_air_2x.jpeg');
