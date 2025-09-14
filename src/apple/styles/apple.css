@@ -89,7 +89,7 @@ body {
 }
 /* 기본 1배율 이미지 */
 .card-pro {
-  background-image: url('../products/ipad_pro.jpeg');
+  background-image: url('../products/ipad_pro_2x.jpeg');
 }
 .card-ipad {
   background-image: url('../products/ipad_air.jpeg');
