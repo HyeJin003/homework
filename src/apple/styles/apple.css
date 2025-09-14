@@ -73,47 +73,47 @@ body {
     }
 
     .card-pro {
-      background-image: url('/src/apple/products/ipad_pro_2x.jpeg');
+      background-image: url('../products/ipad_pro_2x.jpeg');
       background: red;
     }
     .card-ipad {
-      background-image: url('/src/apple/products/ipad_air_2x.jpeg');
+      background-image: url('../products/ipad_air_2x.jpeg');
     }
     .card-iphone {
-      background-image: url('/src/apple/products/iphone15_pro_2x.jpeg');
+      background-image: url('../products/iphone15_pro_2x.jpeg');
     }
     .card-watch {
-      background-image: url('/src/apple/products/apple_watch_2x.jpeg');
+      background-image: url('../products/apple_watch_2x.jpeg');
     }
   }
 }
 /* 기본 1배율 이미지 */
 .card-pro {
-  background-image: url('/src/apple/products/ipad_pro.jpeg');
+  background-image: url('../products/ipad_pro.jpeg');
 }
 .card-ipad {
-  background-image: url('/src/apple/products/ipad_air.jpeg');
+  background-image: url('../products/ipad_air.jpeg');
 }
 .card-iphone {
-  background-image: url('/src/apple/products/iphone15.jpeg');
+  background-image: url('../products/iphone15.jpeg');
 }
 .card-watch {
-  background-image: url('/src/apple/products/apple_watch.jpeg');
+  background-image: url('../products/apple_watch.jpeg');
 }
 
 /* 고해상도(2x) 대응 */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .card-pro {
-    background-image: url('/src/apple/products/ipad_pro_2x.jpeg');
+    background-image: url('../products/ipad_pro_2x.jpeg');
   }
   .card-ipad {
-    background-image: url('/src/apple/products/ipad_air_2x.jpeg');
+    background-image: url('../apple.html');
   }
   .card-iphone {
-    background-image: url('/src/apple/products/iphone15_2x.jpeg');
+    background-image: url('../products/iphone15_2x.jpeg');
   }
   .card-watch {
-    background-image: url('/src/apple/products/apple_watch_2x.jpeg');
+    background-image: url('../products/apple_watch_2x.jpeg');
   }
 }
 
